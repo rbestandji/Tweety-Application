@@ -1,0 +1,24 @@
+@(tweets:List[Tweet])
+@main("Tweety") {
+
+	<h1>Les Tweets</h1>
+	
+	<table class="table table-striped">
+	
+		<tr>
+			<td>ID</td>
+			<td>Date</td>
+			<td>Username</td>
+			<td>Tweet</td>
+		</tr>
+	@for((tweet, i) <- tweets.zipWithIndex) {
+		<tr>
+			<td>@tweet.id</td>
+			<td>@tweet.creationDate</td>
+			<td>@tweet.username</td>
+			<td>@tweet.commentaire</td>
+		</tr>
+	}
+	</table>
+	il ya au total @tweets.size tweets.
+}
